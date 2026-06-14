@@ -20,3 +20,23 @@ class CategoriaResposta(BaseModel):
 # TransacaoResposta -> os campos acima + id  (use from_attributes = True)
 #
 # Siga o padrão das classes Categoria acima.
+
+# --- Transacao ---
+class TransacaoCriar(BaseModel):
+    descricao: str
+    valor: float
+    tipo: str
+    data: date
+    categoria_id: int
+
+
+class TransacaoResposta(BaseModel):
+    id: int
+    descricao: str
+    valor: float
+    tipo: str
+    data: date
+    categoria_id: int
+
+    class Config:
+        from_attributes = True
